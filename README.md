@@ -1,27 +1,52 @@
-# Florana
+# 🐶🐱🐢 Florana
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+##### A 1-2 Page online presence for a Florist.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## 📖 Features
+ - Fully Responsive
+ - Pure (S)CSS
+ - Custom Animations
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## 👩‍💻 Live Website
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🖼 Offline Demo
+#### Mobile Preview
 
-## Running end-to-end tests
+#### Mobile Preview
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+
+
+## ⚒ Installation/Setup
+The installation requires at least **node version 10.4**
+
+```Shell
+# run in the root directory of the project
+npm install
+npm run start
+# run in the root directory of the project
+yarn install
+yarn run start
+```
+
+
+## 📚 Technical Informations
+
+#### Technologies used
+
+| Technology              | Description                            |
+|-------------------------|----------------------------------------|
+| Angular                 |   For the frontend.                    |
+| SCSS                    |   Styling                              |
+| NgRx                    |   Global state management              |
+
+#### Implementation
