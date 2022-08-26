@@ -12,6 +12,8 @@
   --navbar-height: 7rem;
   --footer-height: 3.5rem;
 
+  --clr-hero-bg: #ffffff;
+
   --box-shadow-primary: box-shadow: 4px 3px 9px 0px rgb(0 0 0 / 10%);
   --box-shadow-secondary:box-shadow: 12px 9px 38px 0px rgb(0 0 0 / 10%);
 
@@ -27,16 +29,16 @@
   --clr-text-primary: #3a3330;
   --clr-text-secondary: #ffffff;
 
-  --clr-accent-primary: #f69946;
+  --clr-accent-primary: #dd413b;
 }
 
 
 .container {
   margin: 0 auto;
-  width: 1200px;
+  width: 1400px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .container {
     width: calc(100% - 2rem);
   }
