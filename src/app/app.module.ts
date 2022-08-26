@@ -11,6 +11,8 @@ import { PersistanceService } from './shared/services/persistance.service';
 import { FooterModule } from './shared/components/footer/footer.module';
 import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { CartPageModule } from './pages/cart-page/cart-page.module';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +23,10 @@ import { CartPageModule } from './pages/cart-page/cart-page.module';
     FooterModule,
     NavbarModule,
     StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
     EffectsModule.forRoot([]),
   ],
   providers: [PersistanceService],
