@@ -7,8 +7,9 @@ import { CaSectionComponent } from './components/ca-section/ca-section.component
 import { TeamSectionComponent } from './components/team-section/team-section.component';
 import { NewsletterSectionComponent } from './components/newsletter-section/newsletter-section.component';
 import { TestimonialsSectionComponent } from './components/testimonials-section/testimonials-section.component';
+import { RouterModule, Routes } from '@angular/router';
 
-
+const routes: Routes = [{ path: '', component: HomePageComponent }];
 
 @NgModule({
   declarations: [
@@ -18,10 +19,8 @@ import { TestimonialsSectionComponent } from './components/testimonials-section/
     CaSectionComponent,
     TeamSectionComponent,
     NewsletterSectionComponent,
-    TestimonialsSectionComponent
+    TestimonialsSectionComponent,
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule, RouterModule.forChild(routes)],
 })
-export class HomePageModule { }
+export class HomePageModule {}

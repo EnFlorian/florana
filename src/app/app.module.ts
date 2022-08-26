@@ -8,6 +8,9 @@ import { NotFoundModule } from './pages/not-found/not-found.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { PersistanceService } from './shared/services/persistance.service';
+import { FooterModule } from './shared/components/footer/footer.module';
+import { NavbarModule } from './shared/components/navbar/navbar.module';
+import { CartPageModule } from './pages/cart-page/cart-page.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +18,8 @@ import { PersistanceService } from './shared/services/persistance.service';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NotFoundModule,
+    FooterModule,
+    NavbarModule,
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
   ],

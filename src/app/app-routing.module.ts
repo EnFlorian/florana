@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { CartPageModule } from './pages/cart-page/cart-page.module';
+import { HomePageModule } from './pages/home-page/home-page.module';
+import { NotFoundModule } from './pages/not-found/not-found.module';
+import { ProductPageModule } from './pages/product-page/product-page.module';
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot([])],
+  exports: [
+    RouterModule,
+    CartPageModule,
+    ProductPageModule,
+    HomePageModule,
+    NotFoundModule,
+  ],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
