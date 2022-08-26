@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 
 @Injectable()
-export class LoginEffect {
+export class LogoutEffect {
   constructor(
     private actions$: Actions,
     private persistanceService: PersistanceService,
