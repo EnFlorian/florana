@@ -1,0 +1,17 @@
+.footer {
+  height: var(--footer-height);
+  background-color: var(--clr-bg-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  width: 100%;
+
+  &__copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+}

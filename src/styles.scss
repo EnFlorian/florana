@@ -1,4 +1,122 @@
-/* You can add global styles to this file, and also import other style files */
+/* Typography */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --font-primary: "Poppins", sans-serif;
+}
+
+
+
+/* Global */
+:root {
+  --navbar-height: 4rem;
+  --footer-height: 3.5rem;
+
+  --box-shadow-primary: box-shadow: 4px 3px 9px 0px rgb(0 0 0 / 10%);
+  --box-shadow-secondary:box-shadow: 12px 9px 38px 0px rgb(0 0 0 / 10%);
+
+  --transition-slow: all 0.3s ease-in-out;
+  --transition-base: all 0.2s ease-in-out;
+  --transition-fast: all 0.1s ease-in-out;
+
+  --clr-bg-primary: #f9f5eb;
+  --clr-bg-secondary: #3a3330;
+  --clr-bg-tertiary: #CFC6B6;
+  --clr-bg-neutral: #ffffff;
+
+  --clr-text-primary: #3a3330;
+  --clr-text-secondary: #ffffff;
+
+  --clr-accent-primary: #f69946;
+}
+
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: calc(100% - 2rem);
+  }
+}
+
+
+/* Scrollbar */
+
+
+/* Scrollbar */
+/* Width */
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--clr-bg-primary);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--clr-accent-primary);
+  height: 2rem;
+  /* border-radius: 1rem; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-accent-primary);
+}
+
+
+/* Base Styles */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+}
+
+
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+/* Accessability */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

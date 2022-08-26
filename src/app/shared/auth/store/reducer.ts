@@ -4,21 +4,21 @@ import { loginAction, loginFailureAction, loginSuccessAction } from './actions';
 
 const initialState: AuthStateInterface = {
   error: '',
-  loading: false,
+  isLoading: false,
   user: null,
 };
 
 export const authReducer = createReducer(
   initialState,
-  on(loginAction, (state) => ({ ...state, loading: true })),
+  on(loginAction, (state) => ({ ...state, isLoading: true })),
   on(loginSuccessAction, (state, { user }) => ({
     ...state,
-    loading: false,
+    isLoading: false,
     user,
   })),
   on(loginFailureAction, (state, { error }) => ({
     ...state,
     error,
-    loading: false,
+    isLoading: false,
   }))
 );

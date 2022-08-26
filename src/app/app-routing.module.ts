@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { CartPageModule } from './pages/cart-page/cart-page.module';
 import { HomePageModule } from './pages/home-page/home-page.module';
 import { NotFoundModule } from './pages/not-found/not-found.module';

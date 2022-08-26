@@ -2,6 +2,6 @@ import { UserInterface } from '../../types/User.interface';
 
 export interface AuthStateInterface {
   error: string;
-  loading: boolean;
+  isLoading: boolean;
   user: UserInterface | null;
 }

@@ -13,6 +13,9 @@ import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { CartPageModule } from './pages/cart-page/cart-page.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
+import { ProductsModule } from './shared/products/products.module';
+import { CartModule } from './shared/cart/cart.module';
+import { AuthModule } from './shared/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,9 +23,22 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ProductsModule,
+    CartModule,
+    AuthModule,
     FooterModule,
     NavbarModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(
+      {},
+      {
+        runtimeChecks: {
+          strictStateImmutability: true,
+          strictActionImmutability: true,
+          strictActionSerializability: true,
+          strictStateSerializability: true,
+        },
+      }
+    ),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
