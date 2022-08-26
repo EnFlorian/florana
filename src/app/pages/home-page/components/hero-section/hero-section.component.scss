@@ -1,3 +1,45 @@
 .hero-section {
-  height: calc(100vh - var(--navbar-height));
+  height: calc(100vh - var(--navbar-height) - 20vh);
+  background-image: url("/assets/images/sections/hero-image.jpg");
+  background-size: cover;
+  overflow: hidden;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+    padding: 15rem;
+  }
+
+  &__content {
+    position: absolute;
+    top: 15rem;
+    left: 20rem;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 70vh;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--clr-text-primary);
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--clr-text-primary);
+    margin-bottom: 2rem;
+  }
+
+  &__accent {
+    color: var(--clr-accent-primary);
+  }
 }
