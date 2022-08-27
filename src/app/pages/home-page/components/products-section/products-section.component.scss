@@ -1,0 +1,16 @@
+.products-section {
+  display: flex;
+  flex-direction: column;
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
