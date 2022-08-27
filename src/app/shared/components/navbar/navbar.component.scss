@@ -40,4 +40,8 @@
   &__accent {
     color: var(--clr-accent-primary);
   }
+
+  &--scrolling {
+    box-shadow: var(--box-shadow-primary);
+  }
 }

@@ -5,18 +5,16 @@
   --font-primary: "Poppins", sans-serif;
 }
 
-
-
 /* Global */
 :root {
   --navbar-height: 5rem;
   --footer-height: 3.5rem;
 
-  --clr-hero-bg: #ffffff;
+  --clr-hero-bg: #ffffffd3;
   --clr-newsletter-bg: #ffffffd3;
 
-  --box-shadow-primary: box-shadow: 4px 3px 9px 0px rgb(0 0 0 / 10%);
-  --box-shadow-secondary:box-shadow: 12px 9px 38px 0px rgb(0 0 0 / 10%);
+  --box-shadow-primary: 5px 5px 9px 0px rgb(0 0 0 / 10%);
+  --box-shadow-secondary: 12px 9px 38px 0px rgb(0 0 0 / 10%);
 
   --transition-slow: all 0.3s ease-in-out;
   --transition-base: all 0.2s ease-in-out;
@@ -34,7 +32,6 @@
   --clr-accent-primary: #dd413b;
 }
 
-
 .container {
   margin: 0 auto;
   width: 1400px;
@@ -46,9 +43,7 @@
   }
 }
 
-
 /* Scrollbar */
-
 
 /* Scrollbar */
 /* Width */
@@ -73,7 +68,6 @@
   background: var(--clr-accent-primary);
 }
 
-
 /* Base Styles */
 *,
 ::before,
@@ -83,8 +77,6 @@
   margin: 0;
   padding: 0;
 }
-
-
 
 img,
 picture {
