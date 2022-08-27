@@ -13,3 +13,7 @@ export const login = (
     return reject('User not found');
   });
 };
+
+export const subscribe = (email: string): Promise<boolean> => {
+  return new Promise((resolve, reject) => resolve(true));
+};
