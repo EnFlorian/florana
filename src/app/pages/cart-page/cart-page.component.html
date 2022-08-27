@@ -3,4 +3,26 @@
     [title]="title"
     [description]="description"
   ></app-page-header>
+
+  <div class="cart-page__wrapper container">
+    <div class="cart-page__items-header">
+      <div class="cart-page__item">
+        <span>Product</span>
+      </div>
+      <div class="cart-page__item">
+        <span>Price</span>
+      </div>
+      <div class="cart-page__item">
+        <span>Quantity</span>
+      </div>
+      <div class="cart-page__item">
+        <span> Sub Total</span>
+      </div>
+    </div>
+    <ul class="cart-page__items">
+      <li class="cart-page__item" *ngFor="let item of items$ | async">
+        <app-cart-item [item]="item"></app-cart-item>
+      </li>
+    </ul>
+  </div>
 </article>

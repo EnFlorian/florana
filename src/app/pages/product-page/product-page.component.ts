@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { from, map, Observable, Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { from, Observable, Subscription } from 'rxjs';
 import {
   fetchProductById,
   fetchProductsByCategory,
@@ -20,6 +21,8 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   productCategory: string;
   relatedProducts$: Observable<ProductInterface[]>;
 
+  constructor(private store: Store) {}
+
   ngOnInit(): void {
     this.product$ = from(fetchProductById(1));
     // get product category from product
@@ -36,5 +39,10 @@ export class ProductPageComponent implements OnInit, OnDestroy {
 
   setQuantity(quantity: number): void {
     this.quantity = quantity;
+  }
+
+  addToCart(): void {
+    console.log('add to cart');
+    this.store.dispatch({ type: 'ADD_TO_CART', payload: { productId: 1 } });
   }
 }

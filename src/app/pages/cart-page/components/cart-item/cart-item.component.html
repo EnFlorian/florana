@@ -1,1 +1,18 @@
-<p>cart-item works!</p>
+<div class="cart-item">
+  <div class="cart-item__image">
+    <img src="{{ itemProps.product.images[0] }}" alt="" />
+  </div>
+  <p class="cart-item__title">{{ itemProps.product.name }}</p>
+  <p class="cart-item__price">{{ itemProps.product.price | currency }}</p>
+  <p class="cart-item__quantity">
+    <span>Quantity:</span>
+    <span>{{ itemProps.quantity }}</span>
+  </p>
+  <p class="cart-item__subtotal">
+    <span>Subtotal:</span>
+    <span>{{ itemProps.product.price * itemProps.quantity | currency }}</span>
+  </p>
+  <button class="cart-item__remove" (click)="removeItem()">
+    <i class="fas fa-times"></i>
+  </button>
+</div>

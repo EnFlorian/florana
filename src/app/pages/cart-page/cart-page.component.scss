@@ -1,0 +1,14 @@
+.cart-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__items-header {
+    width: 100%;
+    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+  }
+}
