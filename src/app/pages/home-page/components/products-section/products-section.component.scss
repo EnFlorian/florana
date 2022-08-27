@@ -25,6 +25,10 @@
     &--active {
       color: var(--clr-accent-primary);
     }
+
+    &:hover {
+      color: var(--clr-accent-primary);
+    }
   }
 
   &__products {
