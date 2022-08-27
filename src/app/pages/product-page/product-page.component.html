@@ -1,27 +1,38 @@
 <article class="product-page">
-  <app-page-header></app-page-header>
-  <div class="product-page__wrapper">
+  <app-page-header
+    [title]="title"
+    [description]="description"
+  ></app-page-header>
+  <div class="product-page__wrapper container">
     <div class="product-page__content">
       <div class="product-page__gallery">
-        <app-image-gallery></app-image-gallery>
+        <app-image-gallery
+          [images]="(product$ | async)!.images"
+        ></app-image-gallery>
       </div>
       <div class="product-page__info">
-        <!-- title -->
         <h1 class="product-page__title">
-          {{ product.name }}
+          {{ (product$ | async).name }}
         </h1>
-        <!-- price -->
         <div class="product-page__price">
-          {{ product.price | currency: "USD":true }}
-          <!-- description -->
+          {{ (product$ | async)!.price | currency: "USD":true }}
           <p class="product-page__description">
-            {{ product.description }}
+            {{ (product$ | async)!.description }}
           </p>
           <app-quantity-selector
             [setQuantity]="setQuantity"
           ></app-quantity-selector>
         </div>
         <!-- Related products -->
+        <!-- <ul class="product-page__related-products">
+          <li
+            class="product-page__related-product"
+            *ngFor="let product of relatedProducts$ | async"
+          >
+            {{ product.name }}
+            <app-product-card [product]="product"></app-product-card>
+          </li>
+        </ul> -->
       </div>
     </div>
   </div>
