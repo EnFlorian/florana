@@ -8,6 +8,7 @@ import { TeamSectionComponent } from './components/team-section/team-section.com
 import { NewsletterSectionComponent } from './components/newsletter-section/newsletter-section.component';
 import { TestimonialsSectionComponent } from './components/testimonials-section/testimonials-section.component';
 import { RouterModule, Routes } from '@angular/router';
+import { TeamCardComponent } from './components/team-section/components/team-card/team-card.component';
 
 const routes: Routes = [{ path: '', component: HomePageComponent }];
 
@@ -20,6 +21,7 @@ const routes: Routes = [{ path: '', component: HomePageComponent }];
     TeamSectionComponent,
     NewsletterSectionComponent,
     TestimonialsSectionComponent,
+    TeamCardComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })

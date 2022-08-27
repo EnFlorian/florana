@@ -1,1 +1,17 @@
-<p>team-section works!</p>
+<section class="team-section container">
+  <header class="team-section__header">
+    <h1 class="team-section__title">Meet the team</h1>
+    <p class="team-section__description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod
+      nisi eu nisl finibus.
+    </p>
+  </header>
+  <ul class="team-section__members">
+    <li
+      *ngFor="let member of teamMembers$ | async"
+      class="team-section__member"
+    >
+      <app-team-card [member]="member"></app-team-card>
+    </li>
+  </ul>
+</section>
