@@ -1,1 +1,28 @@
-<p>product-page works!</p>
+<article class="product-page">
+  <app-page-header></app-page-header>
+  <div class="product-page__wrapper">
+    <div class="product-page__content">
+      <div class="product-page__gallery">
+        <app-image-gallery></app-image-gallery>
+      </div>
+      <div class="product-page__info">
+        <!-- title -->
+        <h1 class="product-page__title">
+          {{ product.name }}
+        </h1>
+        <!-- price -->
+        <div class="product-page__price">
+          {{ product.price | currency: "USD":true }}
+          <!-- description -->
+          <p class="product-page__description">
+            {{ product.description }}
+          </p>
+          <app-quantity-selector
+            [setQuantity]="setQuantity"
+          ></app-quantity-selector>
+        </div>
+        <!-- Related products -->
+      </div>
+    </div>
+  </div>
+</article>

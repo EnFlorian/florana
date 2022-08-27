@@ -1,0 +1,11 @@
+<div class="product-card">
+  <a [routerLink]="['/product', productProps.id]">
+    <div class="product-card__image-wrapper">
+      <img src="{{ productProps.image }}" alt="{{ productProps.name }}" />
+    </div>
+    <div class="product-card__info">
+      <h1 class="product-card__title">{{ productProps.name }}</h1>
+      <p class="product-card__price">${{ productProps.price }}</p>
+    </div>
+  </a>
+</div>

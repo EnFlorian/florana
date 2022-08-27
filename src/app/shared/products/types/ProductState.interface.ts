@@ -1,4 +1,4 @@
-import { ProductInterface } from '../../types/product.interface';
+import { ProductInterface } from '../../types/Product.interface';
 
 export interface ProductStateInterface {
   error: string;

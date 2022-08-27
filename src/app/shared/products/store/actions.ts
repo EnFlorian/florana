@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ProductInterface } from '../../types/product.interface';
+import { ProductInterface } from '../../types/Product.interface';
 import { ActionTypes } from './actionTypes';
 
 export const fetchProductsAction = createAction(ActionTypes.FETCH_PRODUCTS);

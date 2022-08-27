@@ -1,0 +1,23 @@
+.page-header {
+  margin-top: var(--navbar-height);
+  background-color: var(--clr-bg-tertiary);
+  height: var(--page-header-height);
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--clr-text-primary);
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    color: var(--clr-text-primary);
+  }
+}

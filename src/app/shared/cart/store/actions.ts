@@ -1,6 +1,5 @@
 import { createAction, props } from '@ngrx/store';
 import { CartItemInterface } from '../../types/CartItem.interface';
-import { ProductInterface } from '../../types/product.interface';
 import { ActionTypes } from './actionTypes';
 
 export const emptyCartAction = createAction(ActionTypes.EMPTY_CART);

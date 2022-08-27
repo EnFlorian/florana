@@ -9,6 +9,7 @@ import { NewsletterSectionComponent } from './components/newsletter-section/news
 import { TestimonialsSectionComponent } from './components/testimonials-section/testimonials-section.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TeamCardComponent } from './components/team-section/components/team-card/team-card.component';
+import { ProductCardModule } from 'src/app/shared/components/product-card/product-card.module';
 
 const routes: Routes = [{ path: '', component: HomePageComponent }];
 
@@ -23,6 +24,6 @@ const routes: Routes = [{ path: '', component: HomePageComponent }];
     TestimonialsSectionComponent,
     TeamCardComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), ProductCardModule],
 })
 export class HomePageModule {}

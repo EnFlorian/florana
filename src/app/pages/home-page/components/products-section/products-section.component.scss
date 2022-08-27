@@ -1,16 +1,35 @@
 .products-section {
   display: flex;
   flex-direction: column;
+  padding: 5rem 0;
 
   &__menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 1rem;
   }
 
   &__tabs {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+  }
+
+  &__tab {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--clr-text-primary);
+    cursor: pointer;
+
+    &--active {
+      color: var(--clr-accent-primary);
+    }
+  }
+
+  &__products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 2rem;
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { fetchTeamMembers } from 'src/app/mock-api/team/api';
-import { TeamMemberInterface } from 'src/app/shared/types/TeamMember';
+import { TeamMemberInterface } from 'src/app/shared/types/TeamMember.interface';
 
 @Component({
   selector: 'app-team-section',

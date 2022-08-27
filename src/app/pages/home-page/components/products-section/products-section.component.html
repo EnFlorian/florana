@@ -1,14 +1,35 @@
 <section class="products-section container">
   <div class="products-section__menu">
     <ul class="products-section__tabs">
-      <li>All</li>
-      <li>Flowers</li>
-      <li>Greens</li>
+      <li
+        class="products-section__tab"
+        [ngClass]="{ 'products-section__tab--active': tab === 'all' }"
+        (click)="changeTab('all')"
+      >
+        All
+      </li>
+      <li
+        class="products-section__tab"
+        [ngClass]="{ 'products-section__tab--active': tab === 'flowers' }"
+        (click)="changeTab('flowers')"
+      >
+        Flowers
+      </li>
+      <li
+        class="products-section__tab"
+        [ngClass]="{ 'products-section__tab--active': tab === 'greens' }"
+        (click)="changeTab('greens')"
+      >
+        Greens
+      </li>
     </ul>
-    <select class="products-section__filter">
-      <option value="highest">Highest Price</option>
-      <option value="lowest">Lowest Price</option>
-    </select>
   </div>
-  <ul class="products-section__products"></ul>
+  <ul class="products-section__products">
+    <li *ngFor="let product of filteredProducts$ | async">
+      <app-product-card [product]="product"></app-product-card>
+    </li>
+  </ul>
+  <button class="products-section__button" (click)="loadMore()">
+    Load more
+  </button>
 </section>

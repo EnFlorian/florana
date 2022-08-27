@@ -1,0 +1,11 @@
+<div class="quantity-selector">
+  <input
+    type="number"
+    class="quantity-selector__input"
+    min="1"
+    max="100"
+    step="1"
+    [(ngModel)]="quantity"
+    (change)="onQuantityChange()"
+  />
+</div>
