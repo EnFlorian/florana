@@ -46,10 +46,23 @@ export class CartService {
     this.store.dispatch(emptyCartAction());
   }
 
-  getTotalPrice() {}
+  getTotalPrice() {
+    return combineLatest([this.products$, this.cartItems$]).pipe(
+      map(([products, cartItems]) => {
+        return cartItems.reduce((acc, cartItem) => {
+          const product = products.find((p) => p.id === cartItem.id);
+          return acc + product.price * cartItem.quantity;
+        }, 0);
+      })
+    );
+  }
 
   getTotalQuantity() {
-    return 0;
+    return this.cartItems$.pipe(
+      map((cartItems) =>
+        cartItems.reduce((acc, cartItem) => acc + cartItem.quantity, 0)
+      )
+    );
   }
 
   initValues() {

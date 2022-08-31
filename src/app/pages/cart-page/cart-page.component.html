@@ -6,6 +6,7 @@
 
   <div class="cart-page__wrapper container">
     <div class="cart-page__items-header">
+      =={{ totalPrice$ | async }}== =={{ totalQuantity$ | async }}==
       <div class="cart-page__item">
         <span>Product</span>
       </div>
@@ -20,7 +21,7 @@
       </div>
     </div>
     <ul class="cart-page__items">
-      <li class="cart-page__item" *ngFor="let item of items$ | async">
+      <li class="cart-page__item" *ngFor="let item of cartItems$ | async">
         <app-cart-item [item]="item"></app-cart-item>
       </li>
     </ul>

@@ -12,7 +12,9 @@
     <span>Subtotal:</span>
     <span>{{ (product$ | async).price * itemProps.quantity | currency }}</span>
   </p>
-  <button class="cart-item__remove" (click)="removeFromCart()">
-    <i class="fas fa-times"></i>
-  </button>
+  <!-- button to increase -->
+  <button class="cart-item__increase" (click)="increaseQuantity()">+</button>
+  <!-- button to decrease -->
+  <button class="cart-item__decrease" (click)="decreaseQuantity()">-</button>
+  <button class="cart-item__remove" (click)="removeFromCart()">remove</button>
 </div>

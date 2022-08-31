@@ -22,4 +22,12 @@ export class CartItemComponent implements OnInit {
   removeFromCart() {
     this.cartService.removeFromCart(this.itemProps.id);
   }
+
+  increaseQuantity() {
+    this.cartService.increaseQuantity(this.itemProps.id);
+  }
+
+  decreaseQuantity() {
+    this.cartService.decreaseQuantity(this.itemProps.id);
+  }
 }
