@@ -15,10 +15,7 @@ import { ProductInterface } from 'src/app/shared/types/Product.interface';
 
 @Injectable()
 export class CartService {
-  products$: Observable<ProductInterface[]>;
   cartItems$: Observable<CartItemInterface[]>;
-  totalPrice$: Observable<number>;
-  totalQuantity$: Observable<number>;
 
   constructor(private store: Store) {}
 
@@ -46,57 +43,7 @@ export class CartService {
     this.store.dispatch(emptyCartAction());
   }
 
-  getTotalPrice() {
-    return combineLatest([this.products$, this.cartItems$]).pipe(
-      map(([products, cartItems]) => {
-        return cartItems.reduce((acc, cartItem) => {
-          const product = products.find((p) => p.id === cartItem.id);
-          return acc + product.price * cartItem.quantity;
-        }, 0);
-      })
-    );
-  }
-
-  getTotalQuantity() {
-    return this.cartItems$.pipe(
-      map((cartItems) =>
-        cartItems.reduce((acc, cartItem) => acc + cartItem.quantity, 0)
-      )
-    );
-  }
-
   initValues() {
-    this.products$ = from(fetchProducts());
     this.cartItems$ = this.store.pipe(select(cartItemsSelector));
-    this.totalQuantity$ = this.cartItems$.pipe(
-      map((cartItems) => {
-        return cartItems.reduce((acc, item) => acc + item.quantity, 0);
-      })
-    );
-
-    this.totalPrice$ = combineLatest([this.products$, this.cartItems$]).pipe(
-      map(([products, cartItems]) => {
-        return cartItems.reduce(
-          (acc, item) =>
-            acc +
-            products.find((product) => product.id === item.id).price *
-              item.quantity,
-          0
-        );
-      })
-    );
   }
-
-  // getQuantity(itemId: number): Observable<number> {
-  //   return this.cartItems$.pipe(
-  //     map((cartItems) => {
-  //       return cartItems.reduce((acc, item) => {
-  //         if (item.id === itemId) {
-  //           return item.quantity;
-  //         }
-  //         return acc;
-  //       }, 0);
-  //     })
-  //   );
-  // }
 }
