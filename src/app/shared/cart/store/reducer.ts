@@ -14,10 +14,28 @@ const initialState: CartStateInterface = {
 
 export const cartReducer = createReducer(
   initialState,
-  on(addToCartAction, (state, { cartItem }) => ({
-    ...state,
-    cartItems: [...state.cartItems, cartItem],
-  })),
+  on(addToCartAction, (state, { cartItem }) => {
+    const existingCartItem = state.cartItems.find(
+      (item) => item.id === cartItem.id
+    );
+    if (existingCartItem) {
+      console.log('item exists');
+      return {
+        ...state,
+        cartItems: state.cartItems.map((item) =>
+          item.id === cartItem.id
+            ? { ...item, quantity: item.quantity + cartItem.quantity }
+            : item
+        ),
+      };
+    } else {
+      return {
+        ...state,
+        cartItems: [...state.cartItems, cartItem],
+      };
+    }
+  }),
+
   on(removeFromCartAction, (state, { itemId }) => ({
     ...state,
     cartItems: state.cartItems.filter((item) => item.id !== itemId),
