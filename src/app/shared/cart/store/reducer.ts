@@ -19,7 +19,6 @@ export const cartReducer = createReducer(
       (item) => item.id === cartItem.id
     );
     if (existingCartItem) {
-      console.log('item exists');
       return {
         ...state,
         cartItems: state.cartItems.map((item) =>
