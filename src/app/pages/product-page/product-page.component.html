@@ -5,34 +5,38 @@
   ></app-page-header>
   <div class="product-page__wrapper container">
     <div class="product-page__content">
-      <div class="product-page__gallery">
-        <app-image-gallery
-          [images]="(product$ | async)!.images"
-        ></app-image-gallery>
-      </div>
+      <img [src]="(product$ | async)?.images[0]" alt="product" />
       <div class="product-page__info">
         <h1 class="product-page__title">
-          {{ (product$ | async).name }}
+          {{ (product$ | async)?.name }}
         </h1>
         <div class="product-page__price">
-          {{ (product$ | async)!.price | currency: "USD":true }}
+          {{ (product$ | async)?.price | currency: "USD":true }}
           <p class="product-page__description">
-            {{ (product$ | async)!.description }}
+            {{ (product$ | async)?.description }}
           </p>
-          <app-quantity-selector
-            [setQuantity]="setQuantity"
-          ></app-quantity-selector>
+          <input
+            type="number"
+            value="1"
+            class="quantity-selector__input"
+            min="1"
+            max="100"
+            step="1"
+            (change)="setQuantity($event)"
+          />
         </div>
+        <button class="product-page__add-to-cart" (click)="addToCart()">
+          Add to cart
+        </button>
         <!-- Related products -->
-        <!-- <ul class="product-page__related-products">
+        <ul class="product-page__related-products">
           <li
             class="product-page__related-product"
             *ngFor="let product of relatedProducts$ | async"
           >
             {{ product.name }}
-            <app-product-card [product]="product"></app-product-card>
           </li>
-        </ul> -->
+        </ul>
       </div>
     </div>
   </div>

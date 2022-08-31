@@ -10,10 +10,9 @@ import { FooterModule } from './shared/components/footer/footer.module';
 import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { ProductsModule } from './shared/products/products.module';
 import { CartModule } from './shared/cart/cart.module';
 import { AuthModule } from './shared/auth/auth.module';
-import { QuantitySelectorComponent } from './shared/components/quantity-selector/quantity-selector.component';
+import { AuthPageModule } from './pages/auth-page/auth-page.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +20,6 @@ import { QuantitySelectorComponent } from './shared/components/quantity-selector
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ProductsModule,
     CartModule,
     AuthModule,
     FooterModule,

@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { from, Observable } from 'rxjs';
+import { fetchProductById } from 'src/app/mock-api/products/api';
 import { CartItemInterface } from 'src/app/shared/types/CartItem.interface';
-import { Store } from '@ngrx/store';
-import { decreaseQuantityAction } from 'src/app/shared/cart/store/actions';
+import { ProductInterface } from 'src/app/shared/types/Product.interface';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -10,12 +12,14 @@ import { decreaseQuantityAction } from 'src/app/shared/cart/store/actions';
 })
 export class CartItemComponent implements OnInit {
   @Input('item') itemProps: CartItemInterface;
+  product$: Observable<ProductInterface>;
 
-  constructor(private store: Store) {}
-  ngOnInit(): void {}
+  constructor(private cartService: CartService) {}
+  ngOnInit(): void {
+    this.product$ = from(fetchProductById(this.itemProps.id));
+  }
 
-  removeItem() {
-    const newCartItem = { ...this.itemProps, quantity: 0 };
-    this.store.dispatch(decreaseQuantityAction({ cartItem: newCartItem }));
+  removeFromCart() {
+    this.cartService.removeFromCart(this.itemProps.id);
   }
 }

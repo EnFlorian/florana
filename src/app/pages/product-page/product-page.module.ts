@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductPageComponent } from './product-page.component';
-import { ImageGalleryComponent } from './components/image-gallery/image-gallery.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageHeaderModule } from 'src/app/shared/components/page-header/page-header.module';
 import { QuantitySelectorModule } from 'src/app/shared/components/quantity-selector/quantity-selector.module';
@@ -12,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ProductPageComponent, ImageGalleryComponent],
+  declarations: [ProductPageComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

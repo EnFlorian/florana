@@ -1,0 +1,7 @@
+<article class="auth-page">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <input type="text" formControlName="email" placeholder="Email" />
+    <input type="password" formControlName="password" placeholder="Password" />
+    <button type="submit">Login</button>
+  </form>
+</article>

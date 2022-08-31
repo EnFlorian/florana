@@ -11,15 +11,15 @@ export const addToCartAction = createAction(
 
 export const removeFromCartAction = createAction(
   ActionTypes.REMOVE_FROM_CART,
-  props<{ cartItem: CartItemInterface }>()
+  props<{ itemId: number }>()
 );
 
 export const increaseQuantityAction = createAction(
   ActionTypes.INCREASE_QUANTITY,
-  props<{ cartItem: CartItemInterface }>()
+  props<{ itemId: number }>()
 );
 
 export const decreaseQuantityAction = createAction(
   ActionTypes.DECREASE_QUANTITY,
-  props<{ cartItem: CartItemInterface }>()
+  props<{ itemId: number }>()
 );

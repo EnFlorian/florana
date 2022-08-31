@@ -1,6 +1,6 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthService } from '../../auth.service';
-import { catchError, map, of, switchMap, tap } from 'rxjs';
+import { catchError, from, map, of, switchMap, tap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import {
   loginAction,
@@ -11,39 +11,30 @@ import { PersistanceService } from 'src/app/shared/services/persistance.service'
 import { Router } from '@angular/router';
 import { UserInterface } from '../../../types/User.interface';
 import { LoginErrorInterface } from '../../types/LoginError.interface';
+import { dbLogin } from 'src/app/mock-api/auth/api';
 
 @Injectable()
 export class LoginEffect {
-  constructor(
-    private actions$: Actions,
-    private authService: AuthService,
-    private persistanceService: PersistanceService,
-    private router: Router
-  ) {}
+  constructor(private actions$: Actions, private router: Router) {}
 
   login$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loginAction),
       switchMap((request) => {
-        return this.authService.login(request).pipe(
+        return from(dbLogin(request.email, request.password)).pipe(
           map((user: UserInterface) => {
-            this.persistanceService.set('user', user);
             return loginSuccessAction({ user });
           }),
-          catchError((errorResponse: LoginErrorInterface) => {
-            return of(loginFailureAction({ error: errorResponse.message }));
-          })
+          tap(() => this.router.navigate(['/'])),
+          catchError((error: LoginErrorInterface) =>
+            of(loginFailureAction({ error: error.message })).pipe(
+              tap(() => {
+                this.router.navigate(['/auth']);
+              })
+            )
+          )
         );
       })
     )
-  );
-
-  redirectAfterLogin$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(loginSuccessAction),
-        tap(() => this.router.navigate(['/']))
-      ),
-    { dispatch: false }
   );
 }

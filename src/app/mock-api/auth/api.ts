@@ -1,7 +1,7 @@
 import { UserInterface } from 'src/app/shared/types/User.interface';
 import { users } from './data';
 
-export const login = (
+export const dbLogin = (
   email: string,
   password: string
 ): Promise<UserInterface> => {
