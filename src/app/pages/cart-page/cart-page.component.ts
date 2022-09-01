@@ -23,6 +23,10 @@ export class CartPageComponent implements OnInit {
 
   constructor(private store: Store, private cartService: CartService) {}
 
+  emptyCart() {
+    this.cartService.clearCart();
+  }
+
   ngOnInit(): void {
     this.cartItems$ = this.store.pipe(select(cartItemsSelector));
     this.products$ = from(fetchProducts());

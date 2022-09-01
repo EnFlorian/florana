@@ -1,16 +1,16 @@
 <div class="cart-item">
   <div class="cart-item__image">
-    <img [src]="(product$ | async).images[0]" alt="" />
+    <img [src]="(product$ | async)?.images[0]" alt="" />
   </div>
-  <p class="cart-item__title">{{ (product$ | async).name }}</p>
-  <p class="cart-item__price">{{ (product$ | async).price | currency }}</p>
+  <p class="cart-item__title">{{ (product$ | async)?.name }}</p>
+  <p class="cart-item__price">{{ (product$ | async)?.price | currency }}</p>
   <p class="cart-item__quantity">
     <span>Quantity:</span>
     <span>{{ itemProps.quantity }}</span>
   </p>
   <p class="cart-item__subtotal">
     <span>Subtotal:</span>
-    <span>{{ (product$ | async).price * itemProps.quantity | currency }}</span>
+    <span>{{ (product$ | async)?.price * itemProps.quantity | currency }}</span>
   </p>
   <!-- button to increase -->
   <button class="cart-item__increase" (click)="increaseQuantity()">+</button>
