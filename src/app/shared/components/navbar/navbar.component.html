@@ -5,7 +5,12 @@
       <ul class="navbar__links">
         <li class="navbar__link"><a routerLink="/">Home</a></li>
         <li class="navbar__link"><a routerLink="/cart">Cart</a></li>
-        <li class="navbar__link"><a routerLink="/login">Login</a></li>
+        <li *ngIf="!(isLoggedIn$ | async)" class="navbar__link">
+          <a routerLink="/auth">Login</a>
+        </li>
+        <li *ngIf="isLoggedIn$ | async" class="navbar__link" (click)="logout()">
+          Logout
+        </li>
       </ul>
     </nav>
   </div>

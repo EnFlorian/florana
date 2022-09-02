@@ -1,4 +1,8 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { map, Observable } from 'rxjs';
+import { AuthService } from '../../auth/auth.service';
+import { userSelector } from '../../auth/store/selectors';
 
 @Component({
   selector: 'app-navbar',
@@ -6,19 +10,18 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  window = window;
-  constructor() {}
+  isLoggedIn$: Observable<boolean>;
+  constructor(private store: Store, private authService: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isLoggedIn$ = this.store.select(userSelector).pipe(
+      map((user) => {
+        return !!user;
+      })
+    );
+  }
 
-  @HostListener('window:scroll', ['$event'])
-  navbarScroll = () => {
-    const navbar = document.querySelector('.navbar');
-
-    if (document.documentElement.scrollTop > 20) {
-      navbar?.classList.add('navbar--scrolling');
-    } else {
-      navbar?.classList.remove('navbar--scrolling');
-    }
-  };
+  logout() {
+    this.authService.logout();
+  }
 }

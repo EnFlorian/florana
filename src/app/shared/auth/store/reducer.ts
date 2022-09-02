@@ -1,6 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
 import { AuthStateInterface } from '../types/AuthState.interface';
-import { loginAction, loginFailureAction, loginSuccessAction } from './actions';
+import {
+  loginAction,
+  loginFailureAction,
+  loginSuccessAction,
+  logoutAction,
+} from './actions';
 
 const initialState: AuthStateInterface = {
   error: '',
@@ -20,5 +25,6 @@ export const authReducer = createReducer(
     ...state,
     error,
     isLoading: false,
-  }))
+  })),
+  on(logoutAction, (state) => ({ ...state, user: null }))
 );

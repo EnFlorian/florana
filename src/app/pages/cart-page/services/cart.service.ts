@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { combineLatest, from, map, Observable } from 'rxjs';
-import { fetchProducts } from 'src/app/mock-api/products/api';
+import { map, Observable } from 'rxjs';
+
 import {
   addToCartAction,
   decreaseQuantityAction,
@@ -11,7 +11,6 @@ import {
 } from 'src/app/shared/cart/store/actions';
 import { cartItemsSelector } from 'src/app/shared/cart/store/selectors';
 import { CartItemInterface } from 'src/app/shared/types/CartItem.interface';
-import { ProductInterface } from 'src/app/shared/types/Product.interface';
 
 @Injectable()
 export class CartService {
@@ -41,6 +40,12 @@ export class CartService {
 
   clearCart() {
     this.store.dispatch(emptyCartAction());
+  }
+
+  getTotalQuantity(): Observable<number> {
+    return this.cartItems$.pipe(
+      map((items) => items.reduce((acc, item) => acc + item.quantity, 0))
+    );
   }
 
   initValues() {

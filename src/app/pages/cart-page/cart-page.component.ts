@@ -15,7 +15,6 @@ import { CartService } from './services/cart.service';
 export class CartPageComponent implements OnInit {
   cartItems$: Observable<CartItemInterface[]>;
   products$: Observable<ProductInterface[]>;
-
   totalPrice$: Observable<number>;
   totalQuantity$: Observable<number>;
   title = 'Cart';
@@ -28,6 +27,10 @@ export class CartPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.initValues();
+  }
+
+  initValues() {
     this.cartItems$ = this.store.pipe(select(cartItemsSelector));
     this.products$ = from(fetchProducts());
     this.totalQuantity$ = this.cartItems$.pipe(
