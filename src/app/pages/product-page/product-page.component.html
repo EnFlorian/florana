@@ -12,31 +12,22 @@
         </h1>
         <div class="product-page__price">
           {{ (product$ | async)?.price | currency: "USD":true }}
-          <p class="product-page__description">
-            {{ (product$ | async)?.description }}
-          </p>
-          <input
-            type="number"
-            value="1"
-            class="quantity-selector__input"
-            min="1"
-            max="100"
-            step="1"
-            (change)="setQuantity($event)"
-          />
         </div>
-        <button class="product-page__add-to-cart" (click)="addToCart()">
+        <p class="product-page__description">
+          {{ (product$ | async)?.description }}
+        </p>
+        <input
+          type="number"
+          value="1"
+          class="product-page__input"
+          min="1"
+          max="100"
+          step="1"
+          (change)="setQuantity($event)"
+        />
+        <button class="product-page__button" (click)="addToCart()">
           Add to cart
         </button>
-        <!-- Related products -->
-        <ul class="product-page__related-products">
-          <li
-            class="product-page__related-product"
-            *ngFor="let product of relatedProducts$ | async"
-          >
-            {{ product.name }}
-          </li>
-        </ul>
       </div>
     </div>
   </div>

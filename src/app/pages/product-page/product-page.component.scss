@@ -6,12 +6,12 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    padding: 4rem 0;
   }
 
   &__content {
     display: flex;
-    gap: 1rem;
+    gap: 4rem;
   }
 
   &__gallery {
@@ -20,5 +20,68 @@
 
   &__info {
     flex: 1;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+
+  &__price {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    color: var(--clr-text-secondary);
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    width: 4rem;
+
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: var(--clr-accent-primary);
+    color: var(--clr-text-neutral);
+    align-items: center;
+    width: fit-content;
+    border-radius: 0.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: var(--transition-fast);
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }

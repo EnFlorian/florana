@@ -25,10 +25,8 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   title: string;
   description: string;
   product$: Observable<ProductInterface>;
-  productCategory: string;
   quantity$: Observable<number>;
   subscriptions: Subscription[] = [];
-  relatedProducts$: Observable<ProductInterface[]>;
 
   constructor(
     private cartService: CartService,
@@ -60,8 +58,6 @@ export class ProductPageComponent implements OnInit, OnDestroy {
 
   initValues(): void {
     this.product$ = from(fetchProductById(+this.route.snapshot.params['id']));
-    console.log(this.product$);
-    this.relatedProducts$ = from(fetchProductsByCategory(this.productCategory));
     this.quantity$ = from([1]);
     this.subscriptions.push(
       this.quantity$.subscribe((quantity) => console.log(quantity))
