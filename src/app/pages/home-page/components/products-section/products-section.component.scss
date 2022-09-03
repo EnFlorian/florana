@@ -35,5 +35,37 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &__button {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    border: none;
+    color: var(--clr-text-neutral);
+    background: var(--clr-accent-primary);
+    align-self: center;
+    min-width: 30%;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    transition: (--transition-slow);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (max-width: 710px) {
+  .products-section {
+    &__menu {
+      justify-content: center;
+    }
+
+    &__button {
+      min-width: 85%;
+    }
   }
 }

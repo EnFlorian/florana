@@ -8,6 +8,9 @@ import { AuthService } from 'src/app/shared/auth/auth.service';
   styleUrls: ['./auth-page.component.scss'],
 })
 export class AuthPageComponent implements OnInit {
+  title: string = 'Login';
+  description: string =
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo.';
   form: FormGroup;
 
   constructor(private fb: FormBuilder, private authService: AuthService) {}

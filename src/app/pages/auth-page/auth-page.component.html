@@ -1,4 +1,9 @@
 <article class="auth-page">
+  <app-page-header
+    [title]="title"
+    [description]="description"
+  ></app-page-header>
+
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <input type="text" formControlName="email" placeholder="Email" />
     <input type="password" formControlName="password" placeholder="Password" />

@@ -1,5 +1,5 @@
 .ca-section {
-  height: calc(100vh - var(--navbar-height));
+  min-height: calc(100vh - var(--navbar-height));
   background-color: var(--clr-bg-tertiary);
   padding: 2rem;
   display: flex;
@@ -83,5 +83,15 @@
 
   &__accent {
     color: var(--clr-accent-primary);
+  }
+}
+
+@media (max-width: 1000px) {
+  .ca-section {
+    padding: 4rem 0;
+    &__wrapper {
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 }

@@ -17,8 +17,8 @@
     padding: 1rem;
     background-color: var(--clr-hero-bg);
     position: absolute;
-    top: 15rem;
-    left: 10rem;
+    bottom: 10%;
+    left: 5%;
     display: flex;
     flex-direction: column;
     max-width: 90vh;
@@ -26,11 +26,11 @@
   }
 
   &__title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.1;
     color: var(--clr-text-primary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   &__description {
@@ -42,5 +42,57 @@
 
   &__accent {
     color: var(--clr-accent-primary);
+  }
+}
+
+@media (max-width: 1050px) {
+  .hero-section {
+    &__content {
+      max-width: 40rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__description {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-section {
+    &__content {
+      max-width: 25rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__description {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .hero-section {
+    height: auto;
+    &__content {
+      max-width: 21rem;
+      text-align: center;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    &__description {
+      font-size: 1rem;
+      text-align: center;
+    }
   }
 }
