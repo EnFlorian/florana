@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  currentYear = new Date().getFullYear();
-  companyName = 'Florana';
+  copyRightMessage = `${new Date().getFullYear()} - Florana`;
 
   constructor() {}
 

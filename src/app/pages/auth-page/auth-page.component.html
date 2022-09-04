@@ -5,8 +5,18 @@
   ></app-page-header>
 
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <input type="text" formControlName="email" placeholder="Email" />
-    <input type="password" formControlName="password" placeholder="Password" />
+    <input
+      [(ngModel)]="email"
+      type="text"
+      formControlName="email"
+      placeholder="Email"
+    />
+    <input
+      [(ngModel)]="password"
+      type="password"
+      formControlName="password"
+      placeholder="Password"
+    />
     <button type="submit">Login</button>
   </form>
 </article>

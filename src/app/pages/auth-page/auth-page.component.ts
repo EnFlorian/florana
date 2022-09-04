@@ -12,6 +12,9 @@ export class AuthPageComponent implements OnInit {
   description: string =
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo.';
   form: FormGroup;
+  // demo purposes only
+  email: string = 'demo@user.com';
+  password: string = 'demo';
 
   constructor(private fb: FormBuilder, private authService: AuthService) {}
 

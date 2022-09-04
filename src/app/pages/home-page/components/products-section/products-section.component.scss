@@ -35,7 +35,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   &__button {
@@ -50,10 +50,10 @@
     min-width: 30%;
     cursor: pointer;
     border-radius: 0.3rem;
-    transition: (--transition-slow);
+    transition: (--transition-fast);
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.01);
     }
   }
 }

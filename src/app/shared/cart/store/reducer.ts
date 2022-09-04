@@ -9,7 +9,16 @@ import {
 } from './actions';
 
 const initialState: CartStateInterface = {
-  cartItems: [],
+  cartItems: [
+    {
+      id: 1,
+      quantity: 1,
+    },
+    {
+      id: 2,
+      quantity: 2,
+    },
+  ],
 };
 
 export const cartReducer = createReducer(
