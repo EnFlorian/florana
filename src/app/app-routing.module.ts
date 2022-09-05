@@ -7,7 +7,7 @@ import { NotFoundModule } from './pages/not-found/not-found.module';
 import { ProductPageModule } from './pages/product-page/product-page.module';
 
 @NgModule({
-  imports: [RouterModule.forRoot([])],
+  imports: [RouterModule.forRoot([], { scrollPositionRestoration: 'enabled' })],
   exports: [
     RouterModule,
     CartPageModule,

@@ -5,7 +5,7 @@
   ></app-page-header>
   <div class="product-page__wrapper container">
     <div class="product-page__content">
-      <img [src]="(product$ | async)?.images[0]" alt="product" />
+      <img [src]="(product$ | async)?.image" alt="product" />
       <div class="product-page__info">
         <h1 class="product-page__title">
           {{ (product$ | async)?.name }}

@@ -15,14 +15,34 @@
       <div class="cart-page__item">
         <span>Quantity</span>
       </div>
-      <div class="cart-page__item">
+      <div class="cart-page__item cart-page__subtotal">
         <span> Sub Total</span>
       </div>
     </div>
     <ul class="cart-page__items">
-      <li class="cart-page__item" *ngFor="let item of cartItems$ | async">
+      <li *ngFor="let item of cartItems$ | async">
         <app-cart-item [item]="item"></app-cart-item>
       </li>
     </ul>
+    <!-- summary of quantity and total price -->
+    <div class="cart-page__summary">
+      <div class="cart-page__summary-item">
+        <span class="cart-page__item-title">Quantity:</span>
+        <span class="cart-page__item-value">{{ totalQuantity$ | async }}</span>
+      </div>
+      <div class="cart-page__summary-item">
+        <span class="cart-page__item-title">Total:</span>
+        <span class="cart-page__item-value">{{
+          totalPrice$ | async | currency
+        }}</span>
+      </div>
+    </div>
+    <button
+      class="cart-page__checkout-button"
+      [disabled]="(cartItems$ | async).length === 0"
+      (click)="checkout()"
+    >
+      Checkout
+    </button>
   </div>
 </article>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { combineLatest, from, map, Observable } from 'rxjs';
 import { fetchProducts } from 'src/app/mock-api/products/api';
@@ -20,14 +21,22 @@ export class CartPageComponent implements OnInit {
   title = 'Cart';
   description = 'lorem ipsum dolor sit amet';
 
-  constructor(private store: Store, private cartService: CartService) {}
-
-  emptyCart() {
-    this.cartService.clearCart();
-  }
+  constructor(
+    private store: Store,
+    private cartService: CartService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.initValues();
+  }
+
+  checkout() {
+    // demo purposes only
+    setTimeout(() => {
+      this.cartService.clearCart();
+      this.router.navigate(['/']);
+    }, 500);
   }
 
   initValues() {

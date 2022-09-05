@@ -1,11 +1,7 @@
 <div class="cart-item">
   <div class="cart-item__product-wrapper">
     <div class="cart-item__image-wrapper">
-      <img
-        class="cart-item__image"
-        [src]="(product$ | async)?.images[0]"
-        alt=""
-      />
+      <img class="cart-item__image" [src]="(product$ | async)?.image" alt="" />
     </div>
     <p class="cart-item__title">{{ (product$ | async)?.name }}</p>
   </div>

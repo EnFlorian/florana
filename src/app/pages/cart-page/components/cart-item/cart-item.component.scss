@@ -77,6 +77,12 @@
     }
   }
 
+  &__subtotal {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--clr-text-primary);
+  }
+
   &__remove-button {
     border: none;
     background-color: transparent;
@@ -87,6 +93,34 @@
 
     &:hover {
       color: var(--clr-accent-primary);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .cart-item {
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+  }
+  .cart-item {
+    &__subtotal {
+      display: none;
+    }
+
+    &__image-wrapper {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    &__price {
+      font-size: 1.2rem;
+    }
+
+    &__remove-button {
+      font-size: 1.2rem;
     }
   }
 }
