@@ -54,11 +54,13 @@
     background: var(--clr-accent-primary);
     color: var(--clr-text-neutral);
     padding: 0.5rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border: none;
     outline: none;
     cursor: pointer;
-    transition: var(--transition-base);
+    transition: var(--transition-fast);
+    min-width: 10rem;
+    border-radius: 0.2rem;
 
     &:hover {
       transform: scale(1.01);

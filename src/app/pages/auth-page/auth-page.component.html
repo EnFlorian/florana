@@ -4,19 +4,23 @@
     [description]="description"
   ></app-page-header>
 
-  <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <input
-      [(ngModel)]="email"
-      type="text"
-      formControlName="email"
-      placeholder="Email"
-    />
-    <input
-      [(ngModel)]="password"
-      type="password"
-      formControlName="password"
-      placeholder="Password"
-    />
-    <button type="submit">Login</button>
-  </form>
+  <div class="container">
+    <form class="auth-page__form" (ngSubmit)="onSubmit()" [formGroup]="form">
+      <input
+        [(ngModel)]="email"
+        type="text"
+        formControlName="email"
+        placeholder="Email"
+        class="auth-page__input"
+      />
+      <input
+        [(ngModel)]="password"
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+        class="auth-page__input"
+      />
+      <button class="auth-page__button">Login</button>
+    </form>
+  </div>
 </article>
