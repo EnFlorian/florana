@@ -4,23 +4,23 @@
   padding: 5rem 0;
 
   &__menu {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
   }
 
   &__tabs {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: 1.5rem;
   }
 
   &__tab {
-    font-size: 1.5rem;
-    font-weight: 500;
     color: var(--clr-text-primary);
     cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 500;
 
     &--active {
       color: var(--clr-accent-primary);
@@ -33,24 +33,24 @@
 
   &__products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     margin-bottom: 3rem;
   }
 
   &__button {
-    font-size: 1.3rem;
-    font-weight: 400;
-    padding: 0.5rem 1rem;
-    width: fit-content;
+    align-self: center;
+    background: var(--clr-accent-primary);
+    border-radius: 0.2rem;
     border: none;
     color: var(--clr-text-neutral);
-    background: var(--clr-accent-primary);
-    align-self: center;
-    min-width: 30%;
     cursor: pointer;
-    border-radius: 0.2rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    min-width: 30%;
+    padding: 0.5rem 1rem;
     transition: (--transition-fast);
+    width: fit-content;
 
     &:hover {
       transform: scale(1.01);

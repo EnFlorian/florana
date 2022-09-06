@@ -1,20 +1,20 @@
 .cart-page {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 
   &__wrapper {
     padding: 5rem 0;
   }
 
   &__items-header {
-    width: 100%;
+    align-items: center;
+    border-bottom: 2px solid var(--clr-text-secondary);
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
-    align-items: center;
     justify-items: center;
     padding: 2rem 0 2rem 0;
-    border-bottom: 2px solid var(--clr-text-secondary);
+    width: 100%;
   }
 
   &__items {
@@ -24,14 +24,14 @@
   }
 
   &__summary {
-    margin-top: 2rem;
+    border: 2px solid var(--clr-text-secondary);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    margin-top: 2rem;
     padding: 1rem;
     width: fit-content;
-    border: 2px solid var(--clr-text-secondary);
   }
 
   &__summary-item {
@@ -45,22 +45,22 @@
   }
 
   &__item-value {
-    font-size: 1.5rem;
     color: var(--clr-text-secondary);
+    font-size: 1.5rem;
   }
 
   &__checkout-button {
-    width: fit-content;
     background: var(--clr-accent-primary);
-    color: var(--clr-text-neutral);
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    min-width: 10rem;
     border-radius: 0.2rem;
+    border: none;
+    color: var(--clr-text-neutral);
+    cursor: pointer;
+    font-size: 1.2rem;
+    min-width: 10rem;
+    outline: none;
+    padding: 0.5rem 1rem;
+    transition: var(--transition-fast);
+    width: fit-content;
 
     &:hover {
       transform: scale(1.01);
