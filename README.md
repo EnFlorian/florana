@@ -3,7 +3,6 @@
 ##### A 1-2 Page online presence for a Florist.
 
 
-
 ## 📖 Features
  - Fully Responsive
  - Pure (S)CSS
@@ -15,9 +14,11 @@
 
 
 ## 🖼 Offline Demo
-#### Mobile Preview
+#### Desktop Preview
+![Florana](demo/florana-desktop-demo.gif)
 
 #### Mobile Preview
+![Florana](demo/florana-mobile-demo.gif)
 
 
 
