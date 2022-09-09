@@ -1,4 +1,4 @@
-# 🐶🐱🐢 Florana
+# 🌷 Florana
 
 ##### A 1-2 Page online presence for a Florist.
 
@@ -18,11 +18,6 @@
 #### Mobile Preview
 
 #### Mobile Preview
-
-
-
-
-
 
 
 
