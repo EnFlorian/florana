@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newsletter-section.component.scss'],
 })
 export class NewsletterSectionComponent implements OnInit {
-  constructor() {}
-
   ngOnInit(): void {}
 
   handleSubmit(event: Event) {

@@ -8,7 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   copyRightMessage = `${new Date().getFullYear()} - Florana`;
 
-  constructor() {}
-
   ngOnInit(): void {}
 }

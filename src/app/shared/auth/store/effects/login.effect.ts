@@ -1,5 +1,4 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { AuthService } from '../../auth.service';
 import { catchError, from, map, of, switchMap, tap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import {
@@ -7,7 +6,6 @@ import {
   loginFailureAction,
   loginSuccessAction,
 } from '../actions';
-import { PersistanceService } from 'src/app/shared/services/persistance.service';
 import { Router } from '@angular/router';
 import { UserInterface } from '../../../types/User.interface';
 import { LoginErrorInterface } from '../../types/LoginError.interface';

@@ -12,7 +12,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { CartModule } from './shared/cart/cart.module';
 import { AuthModule } from './shared/auth/auth.module';
-import { AuthPageModule } from './pages/auth-page/auth-page.module';
 
 @NgModule({
   declarations: [AppComponent],

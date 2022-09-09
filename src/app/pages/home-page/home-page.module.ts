@@ -6,7 +6,6 @@ import { ProductsSectionComponent } from './components/products-section/products
 import { CaSectionComponent } from './components/ca-section/ca-section.component';
 import { TeamSectionComponent } from './components/team-section/team-section.component';
 import { NewsletterSectionComponent } from './components/newsletter-section/newsletter-section.component';
-import { TestimonialsSectionComponent } from './components/testimonials-section/testimonials-section.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TeamCardComponent } from './components/team-section/components/team-card/team-card.component';
 import { ProductCardModule } from 'src/app/shared/components/product-card/product-card.module';
@@ -21,7 +20,6 @@ const routes: Routes = [{ path: '', component: HomePageComponent }];
     CaSectionComponent,
     TeamSectionComponent,
     NewsletterSectionComponent,
-    TestimonialsSectionComponent,
     TeamCardComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes), ProductCardModule],

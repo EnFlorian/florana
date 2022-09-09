@@ -9,6 +9,7 @@ import {
 } from './actions';
 
 const initialState: CartStateInterface = {
+  // demo purposes
   cartItems: [
     {
       id: 1,

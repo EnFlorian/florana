@@ -1,4 +1,3 @@
-// Products API
 import { ProductInterface } from 'src/app/shared/types/Product.interface';
 import { products } from './data';
 

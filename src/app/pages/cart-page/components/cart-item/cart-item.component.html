@@ -6,7 +6,6 @@
     <p class="cart-item__title">{{ (product$ | async)?.name }}</p>
   </div>
   <p class="cart-item__price">{{ (product$ | async)?.price | currency }}</p>
-
   <p class="cart-item__quantity">
     <button class="cart-item__decrease-button" (click)="decreaseQuantity()">
       -

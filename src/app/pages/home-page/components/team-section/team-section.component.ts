@@ -9,9 +9,9 @@ import { TeamMemberInterface } from 'src/app/shared/types/TeamMember.interface';
   styleUrls: ['./team-section.component.scss'],
 })
 export class TeamSectionComponent implements OnInit {
-  teamMembers$: Observable<TeamMemberInterface[]> = from(fetchTeamMembers());
+  teamMembers$: Observable<TeamMemberInterface[]>;
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.teamMembers$ = from(fetchTeamMembers());
+  }
 }

@@ -9,7 +9,5 @@ export class PageHeaderComponent implements OnInit {
   @Input('title') titleProps: string;
   @Input('description') descriptionProps: string;
 
-  constructor() {}
-
   ngOnInit(): void {}
 }
