@@ -5,6 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './ca-section.component.html',
   styleUrls: ['./ca-section.component.scss'],
 })
-export class CaSectionComponent implements OnInit {
-  ngOnInit(): void {}
-}
+export class CaSectionComponent {}

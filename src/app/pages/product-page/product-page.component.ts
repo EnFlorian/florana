@@ -1,18 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {
-  BehaviorSubject,
-  combineLatest,
-  from,
-  map,
-  Observable,
-  Subject,
-  Subscription,
-} from 'rxjs';
-import {
-  fetchProductById,
-  fetchProductsByCategory,
-} from 'src/app/mock-api/products/api';
+import { combineLatest, from, map, Observable, Subscription } from 'rxjs';
+import { fetchProductById } from 'src/app/mock-api/products/api';
 import { ProductInterface } from 'src/app/shared/types/Product.interface';
 import { CartService } from '../cart-page/services/cart.service';
 
@@ -22,8 +11,8 @@ import { CartService } from '../cart-page/services/cart.service';
   styleUrls: ['./product-page.component.scss'],
 })
 export class ProductPageComponent implements OnInit, OnDestroy {
-  title: string;
-  description: string;
+  title: string = 'Product Page';
+  description: string = 'lorem ipsum dolor sit amet';
   product$: Observable<ProductInterface>;
   quantity$: Observable<number>;
   subscriptions: Subscription[] = [];
@@ -62,7 +51,5 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.quantity$.subscribe((quantity) => console.log(quantity))
     );
-    this.title = 'Product Page';
-    this.description = 'lorem ipsum dolor sit amet';
   }
 }
