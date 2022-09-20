@@ -9,6 +9,7 @@ import { NewsletterSectionComponent } from './components/newsletter-section/news
 import { RouterModule, Routes } from '@angular/router';
 import { TeamCardComponent } from './components/team-section/components/team-card/team-card.component';
 import { ProductCardModule } from 'src/app/shared/components/product-card/product-card.module';
+import { ModalModule } from 'src/app/shared/components/modal/modal.module';
 
 const routes: Routes = [{ path: '', component: HomePageComponent }];
 
@@ -22,6 +23,11 @@ const routes: Routes = [{ path: '', component: HomePageComponent }];
     NewsletterSectionComponent,
     TeamCardComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), ProductCardModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    ProductCardModule,
+    ModalModule,
+  ],
 })
 export class HomePageModule {}

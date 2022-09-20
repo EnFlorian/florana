@@ -7,6 +7,8 @@ import { cartItemsSelector } from 'src/app/shared/cart/store/selectors';
 import { CartItemInterface } from 'src/app/shared/types/CartItem.interface';
 import { ProductInterface } from 'src/app/shared/types/Product.interface';
 import { CartService } from './services/cart.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-cart-page',
@@ -24,7 +26,8 @@ export class CartPageComponent implements OnInit {
   constructor(
     private store: Store,
     private cartService: CartService,
-    private router: Router
+    private router: Router,
+    private matDialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -33,10 +36,7 @@ export class CartPageComponent implements OnInit {
 
   checkout() {
     // demo purposes only
-    setTimeout(() => {
-      this.cartService.clearCart();
-      this.router.navigate(['/']);
-    }, 500);
+    this.matDialog.open(ModalComponent, {});
   }
 
   initValues() {

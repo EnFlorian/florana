@@ -1,0 +1,42 @@
+.modal {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    color: var(--clr-text-secondary);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  &__button {
+    background: var(--clr-accent-primary);
+    border-radius: 0.2rem;
+    padding: 0.5 1rem;
+    border: none;
+    color: var(--clr-text-neutral);
+    cursor: pointer;
+    font-size: 1.2rem;
+    min-width: 12rem;
+    width: fit-content;
+    transition: var(--transition-base);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+}

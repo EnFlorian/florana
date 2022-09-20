@@ -12,6 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { CartModule } from './shared/cart/cart.module';
 import { AuthModule } from './shared/auth/auth.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,8 @@ import { AuthModule } from './shared/auth/auth.module';
     AuthModule,
     FooterModule,
     NavbarModule,
+    MatDialogModule,
+
     StoreModule.forRoot(
       {},
       {
