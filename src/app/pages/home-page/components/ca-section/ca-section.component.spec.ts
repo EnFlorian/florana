@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CaSectionComponent } from './ca-section.component';
 
 describe('CaSectionComponent', () => {

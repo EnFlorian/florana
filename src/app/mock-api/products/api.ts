@@ -6,11 +6,6 @@ export const fetchProducts = (): Promise<ProductInterface[]> => {
 };
 
 export const fetchProductById = (id: number): Promise<ProductInterface> => {
-  console.log('Id is: ', id);
-  console.log(
-    'Object is:',
-    products.find((product) => product.id === id)
-  );
   return new Promise((resolve, reject) =>
     resolve(products.find((product) => product.id === id))
   );

@@ -29,8 +29,6 @@ export class AuthPageComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.value);
-
     this.authService.login(this.form.value);
   }
 }

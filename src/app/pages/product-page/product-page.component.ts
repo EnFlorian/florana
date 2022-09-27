@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { combineLatest, from, map, Observable, Subscription } from 'rxjs';
+import { combineLatest, from, Observable, Subscription } from 'rxjs';
 import { fetchProductById } from 'src/app/mock-api/products/api';
 import { ProductInterface } from 'src/app/shared/types/Product.interface';
 import { CartService } from '../cart-page/services/cart.service';
@@ -42,14 +42,11 @@ export class ProductPageComponent implements OnInit, OnDestroy {
 
   setQuantity(event: Event) {
     const quantity: number = Number((event.target as HTMLInputElement).value);
-    this.quantity$ = this.quantity$.pipe(map((currentQuantity) => quantity));
+    this.quantity$ = from([quantity]);
   }
 
   initValues(): void {
     this.product$ = from(fetchProductById(+this.route.snapshot.params['id']));
     this.quantity$ = from([1]);
-    this.subscriptions.push(
-      this.quantity$.subscribe((quantity) => console.log(quantity))
-    );
   }
 }

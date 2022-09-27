@@ -6,7 +6,7 @@ export class PersistanceService {
     try {
       localStorage.setItem(key, JSON.stringify(data));
     } catch (e) {
-      console.error('Error occured while setting data to localStorage', e);
+      console.error('Error occurred while setting data to localStorage', e);
     }
   }
 
@@ -14,7 +14,7 @@ export class PersistanceService {
     try {
       return JSON.parse(localStorage.getItem(key) || '{}');
     } catch (e) {
-      console.error('Error occured while getting data from localStorage', e);
+      console.error('Error occurred while getting data from localStorage', e);
       return null;
     }
   }
