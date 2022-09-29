@@ -1,18 +1,24 @@
 <section class="newsletter-section">
   <div class="newsletter-section__wrapper">
     <h1 class="newsletter-section__title">Stay in touch with Us!</h1>
-    <form class="newsletter-section__form">
+    <form
+      class="newsletter-section__form"
+      [formGroup]="form"
+      (ngSubmit)="onFormSubmit()"
+    >
       <input
         aria-label="Email Address"
         class="newsletter-section__input"
         type="email"
-        name="email"
+        formControlName="email"
         placeholder="Enter your email..."
       />
-
-      <button (click)="handleSubmit($event)" class="newsletter-section__button">
+      <button class="newsletter-section__button" type="submit">
         Subscribe
       </button>
     </form>
+    <div *ngIf="form.get('email').touched && form.get('email').invalid">
+      Please enter a valid Email Address.
+    </div>
   </div>
 </section>

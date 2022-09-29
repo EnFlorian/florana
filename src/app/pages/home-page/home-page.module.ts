@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TeamCardComponent } from './components/team-section/components/team-card/team-card.component';
 import { ProductCardModule } from 'src/app/shared/components/product-card/product-card.module';
 import { ModalModule } from 'src/app/shared/components/modal/modal.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [{ path: '', component: HomePageComponent }];
 
@@ -28,6 +29,7 @@ const routes: Routes = [{ path: '', component: HomePageComponent }];
     RouterModule.forChild(routes),
     ProductCardModule,
     ModalModule,
+    ReactiveFormsModule,
   ],
 })
 export class HomePageModule {}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 
@@ -8,12 +9,18 @@ import { ModalComponent } from 'src/app/shared/components/modal/modal.component'
   styleUrls: ['./newsletter-section.component.scss'],
 })
 export class NewsletterSectionComponent {
-  error: boolean = false;
+  form = this.fb.group({
+    email: ['demo@user.at', [Validators.required, Validators.email]],
+  });
 
-  constructor(private matDialog: MatDialog) {}
+  constructor(private fb: FormBuilder, private matDialog: MatDialog) {}
 
-  handleSubmit(event: Event) {
-    event.preventDefault();
-    this.matDialog.open(ModalComponent, {});
+  onFormSubmit() {
+    if (this.form.valid) {
+      this.form.get('email').reset();
+      this.matDialog.open(ModalComponent, {});
+    } else {
+      this.form.get('email').markAsTouched();
+    }
   }
 }
